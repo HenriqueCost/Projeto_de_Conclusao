@@ -4,6 +4,7 @@ public class Municipio {
 
     private Long id;
     private String name;
+    private String produto;
 
     public Municipio(){
     }
@@ -22,5 +23,13 @@ public class Municipio {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getProduto() {
+        return produto;
+    }
+
+    public void setProduto(String produto) {
+        this.produto = produto;
     }
 }
