@@ -1,7 +1,5 @@
-/*INSERT INTO tb_department(name) VALUES ('Municipality');
-INSERT INTO tb_department(name) VALUES ('Product');
+INSERT INTO tb_municipality(id, name, product) VALUES (1, 'ABADIÂNIA', 'BOVINOS');
+INSERT INTO tb_municipality(id ,name, product) VALUES (2, 'LUZILÂNDIA', 'BOVINOS');
 
-INSERT INTO tb_user(department_id, name, email) VALUES (1, 'Maria', 'maria@gmail.com');
-INSERT INTO tb_user(department_id, name, email) VALUES (1, 'Bob', 'bob@gmail.com');
-INSERT INTO tb_user(department_id, name, email) VALUES (2, 'Alex', 'alex@gmail.com');
-INSERT INTO tb_user(department_id, name, email) VALUES (2, 'Ana', 'ana@gmail.com');
+INSERT INTO tb_product(id, ano_Emissao, mes_Emissao, name) VALUES (1, 2018, 05, 'BOVINOS');
+INSERT INTO tb_product(id, ano_Emissao, mes_Emissao, name) VALUES (2, 2018, 07, 'BOVINOS');

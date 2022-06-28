@@ -17,20 +17,22 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //@Autowired
     private Long Id;
+    private String name;
     //@Autowired
-    private Integer anoEmissao;
+    private Long anoEmissao;
     //@Autowired
-    private Integer mesEmissao;
+    private Long mesEmissao;
 
-    @ManyToOne
-    @JoinColumn(name = "municipality_id")
-    private Municipality municipality;
+    //@ManyToOne
+    //@JoinColumn(name = "municipality_id")
+    //private Municipality municipality;
 
     public Product(){
     }
 
-    public Product(Long id, Integer anoEmissao, Integer mesEmissao){
+    public Product(Long id, String name, Long anoEmissao, Long mesEmissao){
         this.Id = id;
+        this.name = name;
         this.anoEmissao = anoEmissao;
         this.mesEmissao = mesEmissao;
     }
@@ -43,29 +45,37 @@ public class Product implements Serializable {
         Id = id;
     }
 
-    public Integer getAnoEmissao() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getAnoEmissao() {
         return anoEmissao;
     }
 
-    public void setAnoEmissao(Integer anoEmissao) {
+    public void setAnoEmissao(Long anoEmissao) {
         this.anoEmissao = anoEmissao;
     }
 
-    public Integer getMesEmissao() {
+    public Long getMesEmissao() {
         return mesEmissao;
     }
 
-    public void setMesEmissao(Integer mesEmissao) {
+    public void setMesEmissao(Long mesEmissao) {
         this.mesEmissao = mesEmissao;
     }
 
-    public Municipality getMunicipio() {
-        return municipality;
-    }
+    //public Municipality getMunicipio() {
+      //  return municipality;
+    //}
 
-    public void setMunicipio(Municipality municipality) {
-        this.municipality = municipality;
-    }
+    //public void setMunicipio(Municipality municipality) {
+      //  this.municipality = municipality;
+    //}
 
     public static void main(String[] args) {
 
