@@ -1,20 +1,30 @@
 package com.henriquecosta.criacao_de_api.entities;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "tb_municipality")
-public class Municipality {
+@SpringBootApplication
+public class Municipality implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String produto;
+    private String product;
 
     public Municipality(){
+    }
+
+    public Municipality(Long id, String name, String product) {
+        this.id = id;
+        this.name = name;
+        this.product = product;
     }
 
     public Long getId() {
@@ -33,12 +43,12 @@ public class Municipality {
         this.name = name;
     }
 
-    public String getProduto() {
-        return produto;
+    public String getProduct() {
+        return product;
     }
 
-    public void setProduto(String produto) {
-        this.produto = produto;
+    public void setProduto(String product) {
+        this.product = product;
     }
 
     public static void main(String[] args) {

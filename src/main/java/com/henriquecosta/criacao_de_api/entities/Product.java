@@ -1,17 +1,25 @@
 package com.henriquecosta.criacao_de_api.entities;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "tb_product")
-public class Product {
+@SpringBootApplication
+public class Product implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Autowired
     private Long Id;
+    //@Autowired
     private Integer anoEmissao;
+    //@Autowired
     private Integer mesEmissao;
 
     @ManyToOne
@@ -19,6 +27,12 @@ public class Product {
     private Municipality municipality;
 
     public Product(){
+    }
+
+    public Product(Long id, Integer anoEmissao, Integer mesEmissao){
+        this.Id = id;
+        this.anoEmissao = anoEmissao;
+        this.mesEmissao = mesEmissao;
     }
 
     public Long getId() {
