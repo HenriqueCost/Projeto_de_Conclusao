@@ -11,13 +11,13 @@ import java.io.Serializable;
 @Entity
 @Table(name = "tb_municipality")
 @SpringBootApplication
+@Getter
+@Setter
 public class Municipality implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
-    @Setter
     private Long id;
     private String municipio;
     private String nomeProduto;
