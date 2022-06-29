@@ -34,7 +34,7 @@ public class Municipality implements Serializable {
     private Long atividade;
     private Long cdModalidade;
     private Long codIbge;
-    private Long areaCusteio;
+    private Double areaCusteio;
 
     public Municipality(){
     }
@@ -42,7 +42,7 @@ public class Municipality implements Serializable {
     public Municipality(Long id, String municipio, String nomeProduto, Long mesEmissao, Long anoEmissao,
                         Long cdPrograma, Long cdSubPrograma, Long cdFonteRecurso, Long cdTipoSeguro,
                         Long cdEstado, Double vlCusteio, Long cdProduto, Long codCadMu, Long atividade,
-                        Long cdModalidade, Long codIbge, Long areaCusteio) {
+                        Long cdModalidade, Long codIbge, Double areaCusteio) {
         this.id = id;
         this.municipio = municipio;
         this.nomeProduto = nomeProduto;
