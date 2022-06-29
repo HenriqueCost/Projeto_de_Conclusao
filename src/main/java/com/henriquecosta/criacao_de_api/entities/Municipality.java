@@ -1,5 +1,7 @@
 package com.henriquecosta.criacao_de_api.entities;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -14,6 +16,8 @@ public class Municipality implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private Long id;
     private String municipio;
     private String nomeProduto;
@@ -58,141 +62,6 @@ public class Municipality implements Serializable {
         this.areaCusteio = areaCusteio;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getMunicipio() {
-        return municipio;
-    }
-
-    public void setMunicipio(String municipio) {
-        this.municipio = municipio;
-    }
-
-    public String getNomeProduto() {
-        return nomeProduto;
-    }
-
-    public void setNomeProduto(String nomeProduto) {
-        this.nomeProduto = nomeProduto;
-    }
-
-    public Long getMesEmissao() {
-        return mesEmissao;
-    }
-
-    public void setMesEmissao(Long mesEmissao) {
-        this.mesEmissao = mesEmissao;
-    }
-
-    public Long getAnoEmissao() {
-        return anoEmissao;
-    }
-
-    public void setAnoEmissao(Long anoEmissao) {
-        this.anoEmissao = anoEmissao;
-    }
-
-    public Long getCdPrograma() {
-        return cdPrograma;
-    }
-
-    public void setCdPrograma(Long cdPrograma) {
-        this.cdPrograma = cdPrograma;
-    }
-
-    public Long getCdSubPrograma() {
-        return cdSubPrograma;
-    }
-
-    public void setCdSubPrograma(Long cdSubPrograma) {
-        this.cdSubPrograma = cdSubPrograma;
-    }
-
-    public Long getCdFonteRecurso() {
-        return cdFonteRecurso;
-    }
-
-    public void setCdFonteRecurso(Long cdFonteRecurso) {
-        this.cdFonteRecurso = cdFonteRecurso;
-    }
-
-    public Long getCdTipoSeguro() {
-        return cdTipoSeguro;
-    }
-
-    public void setCdTipoSeguro(Long cdTipoSeguro) {
-        this.cdTipoSeguro = cdTipoSeguro;
-    }
-
-    public Long getCdEstado() {
-        return cdEstado;
-    }
-
-    public void setCdEstado(Long cdEstado) {
-        this.cdEstado = cdEstado;
-    }
-
-    public Double getVlCusteio() {
-        return vlCusteio;
-    }
-
-    public void setVlCusteio(Double vlCusteio) {
-        this.vlCusteio = vlCusteio;
-    }
-
-    public Long getCdProduto() {
-        return cdProduto;
-    }
-
-    public void setCdProduto(Long cdProduto) {
-        this.cdProduto = cdProduto;
-    }
-
-    public Long getCodCadMu() {
-        return codCadMu;
-    }
-
-    public void setCodCadMu(Long codCadMu) {
-        this.codCadMu = codCadMu;
-    }
-
-    public Long getAtividade() {
-        return atividade;
-    }
-
-    public void setAtividade(Long atividade) {
-        this.atividade = atividade;
-    }
-
-    public Long getCdModalidade() {
-        return cdModalidade;
-    }
-
-    public void setCdModalidade(Long cdModalidade) {
-        this.cdModalidade = cdModalidade;
-    }
-
-    public Long getCodIbge() {
-        return codIbge;
-    }
-
-    public void setCodIbge(Long codIbge) {
-        this.codIbge = codIbge;
-    }
-
-    public Long getAreaCusteio() {
-        return areaCusteio;
-    }
-
-    public void setAreaCusteio(Long areaCusteio) {
-        this.areaCusteio = areaCusteio;
-    }
 
     public static void main(String[] args) {
 
