@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MunicipalityRepository extends JpaRepository<Municipality, Long> {
+   /* void deleteById();*/
 }
