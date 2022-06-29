@@ -16,18 +16,20 @@ public class MunicipalityController {
     private MunicipalityRepository repository;
 
     @GetMapping
-    public List<Municipality> findAll(){
-        List <Municipality> result = repository.findAll();
+    public List<Municipality> findAll() {
+        List<Municipality> result = repository.findAll();
         return result;
     }
 
     @GetMapping(value = "/{id}")
-    public Municipality findById(@PathVariable Long id){
+    public Municipality findById(@PathVariable Long id) {
         Municipality result = repository.findById(id).get();
         return result;
     }
+
     @PostMapping
-    public Municipality insert(@RequestBody Municipality municipality){
+    public Municipality insert(@RequestBody Municipality municipality) {
         Municipality result = repository.save(municipality);
         return result;
+    }
 }
