@@ -1,3 +1,5 @@
+INSERT INTO tb_municipality(id, municipio, nome_produto, mes_Emissao, ano_Emissao, cd_Programa, cd_Sub_Programa, cd_Fonte_Recurso, cd_Tipo_Seguro, cd_Estado, vl_Custeio, cd_Produto, cod_Cad_Mu, atividade, cd_Modalidade, cod_Ibge, area_Custeio) VALUES (1, 'ABADIÂNIA', 'BOVINOS', 05, 2018, 0999, 0, 0503, 3, 10, 87961.05, 1300, 24615, 2, 26, 5200100, 0);
+INSERT INTO tb_municipality(id, municipio, nome_produto, mes_Emissao, ano_Emissao, cd_Programa, cd_Sub_Programa, cd_Fonte_Recurso, cd_Tipo_Seguro, cd_Estado, vl_Custeio, cd_Produto, cod_Cad_Mu, atividade, cd_Modalidade, cod_Ibge, area_Custeio) VALUES (2, 'LUZILÂNDIA', 'BOVINOS', 07, 2018, 0001, 56, 0502, 9, 18, 5000, 1300, 22813, 2, 26, 2205805, 0);
 
 INSERT INTO tb_product(id, ano_Emissao, mes_Emissao, name) VALUES (1, 2018, 05, 'BOVINOS');
 INSERT INTO tb_product(id, ano_Emissao, mes_Emissao, name) VALUES (2, 2018, 07, 'BOVINOS');

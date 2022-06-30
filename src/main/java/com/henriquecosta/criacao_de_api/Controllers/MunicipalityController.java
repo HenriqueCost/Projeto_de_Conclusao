@@ -1,16 +1,13 @@
 package com.henriquecosta.criacao_de_api.Controllers;
 
 import com.henriquecosta.criacao_de_api.entities.Municipality;
-import com.henriquecosta.criacao_de_api.servicies.MunicipalityService;
+import com.henriquecosta.criacao_de_api.repositories.MunicipalityRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.henriquecosta.criacao_de_api.repositories.MunicipalityRepository;
 
 import java.util.List;
 
@@ -42,13 +39,21 @@ public class MunicipalityController {
         return result;
     }
 
-    /*@DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void removerPorId(@PathVariable("id") Long id){
-        Municipality result = repository.deleteById(Long id);
+    @PutMapping
+    public Municipality atualizarPorId(@RequestBody Municipality municipality){
+        Municipality result = repository.save(municipality);
+        return result;
     }
 
-    @GetMapping
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Municipality removerPorId(@PathVariable Long id){
+        Municipality result = repository.findById(id).get();
+        repository.deleteById(id);
+        return result;
+    }
+
+    /*@GetMapping
     public ResponseEntity<Page<Municipality>> acharTudo(Pageable pageable){
         Page<Municipality> result = repository.findAll(pageable);
         return ResponseEntity.ok(result);

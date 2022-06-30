@@ -62,7 +62,6 @@ public class Municipality implements Serializable {
         this.areaCusteio = areaCusteio;
     }
 
-
     public static void main(String[] args) {
 
         SpringApplication.run(Municipality.class, args);
