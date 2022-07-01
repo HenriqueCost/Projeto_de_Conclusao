@@ -1,23 +1,14 @@
-package com.henriquecosta.criacao_de_api.entities;
+package com.henriquecosta.criacao_de_api.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.io.Serializable;
-
-@Entity
-@Table(name = "tb_municipality")
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Municipality implements Serializable {
-    private static final long serialVersionUID = 1L;
+@Data
+public class MunicipalityDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String nomeProduto;
     private String nomeRegiao;
     private String nomeUF;
@@ -33,5 +24,4 @@ public class Municipality implements Serializable {
     private Long Atividade;
     private Long cdModalidade;
     private Double AreaCusteio;
-
 }
