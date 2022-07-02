@@ -1,14 +1,16 @@
 package com.henriquecosta.criacao_de_api.Controllers;
 
+import com.henriquecosta.criacao_de_api.ClientFeign.MunicipalityFeign;
+import com.henriquecosta.criacao_de_api.DTO.MunicipalityDTO;
 import com.henriquecosta.criacao_de_api.DTO.MunicipalityListDTO;
+import com.henriquecosta.criacao_de_api.entities.Municipality;
 import com.henriquecosta.criacao_de_api.repositories.MunicipalityRepository;
 import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @AllArgsConstructor
@@ -19,13 +21,28 @@ public class MunicipalityController {
     @Autowired
     private MunicipalityRepository repository;
 
+    @Autowired
+    private MunicipalityFeign municipalityFeign;
+
+    @Autowired
+    private ModelMapper modelMapper;
+
     @GetMapping
-    public ResponseEntity<List<MunicipalityListDTO>> acharTudo() {
-        List<MunicipalityListDTO> result = repository.findAll();
+    public MunicipalityListDTO pegarDados(){
+        MunicipalityListDTO municipalityListDTO = municipalityFeign.pegarTodosDados();
+        for(MunicipalityDTO municipalityDTO : municipalityListDTO.getValue()){
+            Municipality municipality = modelMapper.map(municipalityDTO, Municipality.class);
+
+        }
+    }
+
+    /*@GetMapping
+    public ResponseEntity<List<Municipality>> acharTudo() {
+        List<Municipality> result = repository.findAll();
         return ResponseEntity.ok(result);
     }
 
-    @GetMapping(value = "/{id}")
+   /* @GetMapping(value = "/{id}")
     public MunicipalityListDTO acharPorId(@PathVariable Long id) {
         MunicipalityListDTO result = repository.findById(id).get();
         return result;

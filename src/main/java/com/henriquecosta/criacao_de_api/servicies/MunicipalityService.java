@@ -1,12 +1,12 @@
 package com.henriquecosta.criacao_de_api.servicies;
 
 import com.henriquecosta.criacao_de_api.DTO.MunicipalityListDTO;
+import com.henriquecosta.criacao_de_api.Mapper.TransicaoDadosDTOparaServicies;
 import com.henriquecosta.criacao_de_api.repositories.MunicipalityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MunicipalityService {
@@ -14,12 +14,12 @@ public class MunicipalityService {
     @Autowired
     private MunicipalityRepository municipalityRepository;
 
-    public List<MunicipalityListDTO> acharTudo(){
+    public List<MunicipalityListDTO> pegarTodosOsDados(TransicaoDadosDTOparaServicies transicaoDeDadosDTO){
 
         return municipalityRepository.findAll();
     }
 
-    public Optional<MunicipalityListDTO> acharPorId(Long id){
+    /*public Optional<MunicipalityListDTO> acharPorId(Long id){
 
         return municipalityRepository.findById(id);
     }
@@ -37,6 +37,6 @@ public class MunicipalityService {
     public Optional<MunicipalityListDTO> removerPorId(Long id){
 
         return null;
-    }
+    }*/
 
 }

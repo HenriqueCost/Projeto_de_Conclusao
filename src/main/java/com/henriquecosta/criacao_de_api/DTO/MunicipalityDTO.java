@@ -1,27 +1,33 @@
 package com.henriquecosta.criacao_de_api.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class MunicipalityDTO {
-
-    private String nomeProduto;
-    private String nomeRegiao;
-    private String nomeUF;
-    private Long mesEmissao;
-    private Long anoEmissao;
-    private Long cdPrograma;
-    private Long cdSubPrograma;
-    private Long cdFonteRecurso;
-    private Long cdTipoSeguro;
-    private Long cdEstado;
-    private Double QtdCusteio;
-    private Double vlCusteio;
-    private Long Atividade;
-    private Long cdModalidade;
-    private Double AreaCusteio;
+@Getter
+@Setter
+//Dados armazenados da API externa
+public class MunicipalityDTO{
+    public String nomeProduto;
+    public String nomeRegiao;
+    public String nomeUF;
+    @JsonProperty("MesEmissao")
+    public String mesEmissao;
+    @JsonProperty("AnoEmissao")
+    public String anoEmissao;
+    public String cdPrograma;
+    public String cdSubPrograma;
+    public String cdFonteRecurso;
+    public String cdTipoSeguro;
+    @JsonProperty("QtdCusteio")
+    public int qtdCusteio;
+    @JsonProperty("VlCusteio")
+    public int vlCusteio;
+    @JsonProperty("Atividade")
+    public String atividade;
+    public String cdModalidade;
+    @JsonProperty("AreaCusteio")
+    public Object areaCusteio;
 }

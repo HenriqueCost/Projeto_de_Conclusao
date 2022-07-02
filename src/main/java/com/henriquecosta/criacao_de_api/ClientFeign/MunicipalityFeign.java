@@ -1,4 +1,4 @@
-package ClientFeign;
+package com.henriquecosta.criacao_de_api.ClientFeign;
 
 import com.henriquecosta.criacao_de_api.DTO.MunicipalityListDTO;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -9,5 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface MunicipalityFeign {
 
     @RequestMapping(method = RequestMethod.GET, value = "")
-    MunicipalityListDTO getAllPosts();
+    //Pegando todos os dados da API externa e armazenando-os no MunicipalityListDTO
+    MunicipalityListDTO pegarTodosDados();
 }
