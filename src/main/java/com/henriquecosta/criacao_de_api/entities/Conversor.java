@@ -1,42 +1,42 @@
 package com.henriquecosta.criacao_de_api.entities;
 
 
+import com.henriquecosta.criacao_de_api.DTO.MunicipalityDTO;
 import com.henriquecosta.criacao_de_api.DTO.MunicipalityListDTO;
 import com.henriquecosta.criacao_de_api.repositories.MunicipalityRepository;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-
+@Data
 public class Conversor {
 
     @Autowired
-    private MunicipalityRepository repository;
+    private static MunicipalityRepository repository;
 
     @Autowired
-    private MunicipalityListDTO listDTO;
+    private static MunicipalityListDTO listDTO;
 
-    public Municipality get(){
-        List<MunicipalityListDTO> list = (List<MunicipalityListDTO>) get();
+    public static Municipality getList(MunicipalityDTO dto){
 
-        listDTO.getValue().forEach(dto -> {
-            Municipality municipality = new Municipality();
-            municipality.setNomeProduto(dto.getNomeProduto());
-            municipality.setNomeRegiao(dto.getNomeRegiao());
-            municipality.setNomeUF(dto.getNomeUF());
-            municipality.setMesEmissao(dto.getMesEmissao());
-            municipality.setAnoEmissao(dto.getAnoEmissao());
-            municipality.setCdPrograma(dto.getCdPrograma());
-            municipality.setCdSubPrograma(dto.getCdSubPrograma());
-            municipality.setCdFonteRecurso(dto.getCdFonteRecurso());
-            municipality.setCdTipoSeguro(dto.getCdTipoSeguro());
-            municipality.setQtdCusteio(dto.getQtdCusteio());
-            municipality.setVlCusteio(dto.getVlCusteio());
-            municipality.setAtividade(dto.getAtividade());
-            municipality.setCdModalidade(dto.getCdModalidade());
-            municipality.setAreaCusteio(dto.getAreaCusteio());
-            repository.save(new MunicipalityListDTO());
-        });
-        return new Municipality();
+        return Municipality.builder()
+
+                .nomeProduto(dto.getNomeProduto())
+                .nomeRegiao(dto.getNomeRegiao())
+                .nomeUF(dto.getNomeUF())
+                .mesEmissao(dto.getMesEmissao())
+                .anoEmissao(dto.getAnoEmissao())
+                .cdPrograma(dto.getCdPrograma())
+                .cdSubPrograma(dto.getCdSubPrograma())
+                .cdFonteRecurso(dto.getCdFonteRecurso())
+                .cdTipoSeguro(dto.getCdTipoSeguro())
+                .qtdCusteio(dto.getQtdCusteio())
+                .vlCusteio(dto.getVlCusteio())
+                .atividade(dto.getAtividade())
+                .cdModalidade(dto.getCdModalidade())
+                .areaCusteio(dto.getAreaCusteio())
+
+        .build();
     }
 }

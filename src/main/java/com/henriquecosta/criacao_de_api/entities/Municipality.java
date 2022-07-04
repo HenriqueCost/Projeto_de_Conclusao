@@ -1,10 +1,7 @@
 package com.henriquecosta.criacao_de_api.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.henriquecosta.criacao_de_api.DTO.MunicipalityListDTO;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +11,9 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@Getter
+@Setter
 public class Municipality implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -41,6 +41,4 @@ public class Municipality implements Serializable {
     @JsonProperty("AreaCusteio")
     public Double areaCusteio;
 
-    public Municipality(MunicipalityListDTO dto) {
-    }
 }

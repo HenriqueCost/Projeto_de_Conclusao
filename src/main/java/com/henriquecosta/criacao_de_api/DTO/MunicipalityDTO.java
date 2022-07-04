@@ -6,6 +6,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Builder
 //Dados armazenados da API externa
 public class MunicipalityDTO{
     public String nomeProduto;
