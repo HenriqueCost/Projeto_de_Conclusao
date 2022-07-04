@@ -1,6 +1,7 @@
 package com.henriquecosta.criacao_de_api.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.henriquecosta.criacao_de_api.DTO.MunicipalityListDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -40,4 +41,6 @@ public class Municipality implements Serializable {
     @JsonProperty("AreaCusteio")
     public Double areaCusteio;
 
+    public Municipality(MunicipalityListDTO dto) {
+    }
 }

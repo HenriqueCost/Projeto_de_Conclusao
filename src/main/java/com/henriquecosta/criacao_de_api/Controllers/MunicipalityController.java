@@ -1,8 +1,16 @@
 package com.henriquecosta.criacao_de_api.Controllers;
 
+import com.henriquecosta.criacao_de_api.DTO.MunicipalityListDTO;
+import com.henriquecosta.criacao_de_api.entities.Conversor;
+import com.henriquecosta.criacao_de_api.entities.Municipality;
+import com.henriquecosta.criacao_de_api.repositories.MunicipalityRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 @AllArgsConstructor
@@ -10,8 +18,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/dados")
 public class MunicipalityController {
 
-   /* @Autowired
+    @Autowired
     private MunicipalityRepository repository;
+
+    private Conversor conversor;
+
+    @GetMapping
+    public List<MunicipalityListDTO> list(){
+        conversor.get();
+        return repository.findAll();
+    }
+
+    /* @Autowired
+    private MunicipalityRepository repository;
+
 
     @Autowired
     private MunicipalityFeign municipalityFeign;
@@ -24,24 +44,7 @@ public class MunicipalityController {
     public MunicipalityListDTO pegarDados(){
         MunicipalityListDTO municipalityListDTO = municipalityFeign.pegarTodosDados();
         for(MunicipalityDTO municipalityDTO : municipalityListDTO.getValue()){
-            Municipality municipality = new Municipality();
-            municipality.setNomeProduto(municipalityDTO.getNomeProduto());
-            municipality.setNomeRegiao(municipalityDTO.getNomeRegiao());
-            municipality.setNomeUF(municipalityDTO.getNomeUF());
-            municipality.setMesEmissao(municipalityDTO.getMesEmissao());
-            municipality.setAnoEmissao(municipalityDTO.getAnoEmissao());
-            municipality.setCdPrograma(municipalityDTO.getCdPrograma());
-            municipality.setCdSubPrograma(municipalityDTO.getCdSubPrograma());
-            municipality.setCdFonteRecurso(municipalityDTO.getCdFonteRecurso());
-            municipality.setCdTipoSeguro(municipalityDTO.getCdTipoSeguro());
-            municipality.setQtdCusteio(municipalityDTO.getQtdCusteio());
-            municipality.setVlCusteio(municipalityDTO.getVlCusteio());
-            municipality.setAtividade(municipalityDTO.getAtividade());
-            municipality.setCdModalidade(municipalityDTO.getCdModalidade());
-            municipality.setAreaCusteio(municipalityDTO.getAreaCusteio());
-
-        }
-        return pegarDados();
+            Municipality municipality =
     }
 
     /*@GetMapping

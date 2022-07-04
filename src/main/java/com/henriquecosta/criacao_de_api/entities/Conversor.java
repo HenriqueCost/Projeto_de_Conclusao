@@ -17,8 +17,7 @@ public class Conversor {
     private MunicipalityListDTO listDTO;
 
     public Municipality get(){
-        List<MunicipalityListDTO> list = (List<MunicipalityListDTO>) get(); //feign ou rest-template
-        //List<RouteMatcher.Route> route = (List<RouteMatcher.Route>) get(); //feign ou rest-template
+        List<MunicipalityListDTO> list = (List<MunicipalityListDTO>) get();
 
         listDTO.getValue().forEach(dto -> {
             Municipality municipality = new Municipality();
