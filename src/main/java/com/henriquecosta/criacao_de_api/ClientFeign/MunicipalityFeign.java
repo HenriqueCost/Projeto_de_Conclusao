@@ -11,4 +11,5 @@ public interface MunicipalityFeign {
     @RequestMapping(method = RequestMethod.GET, value = "")
     //Pegando todos os dados da API externa e armazenando-os no MunicipalityListDTO
     MunicipalityListDTO pegarTodosDados();
+
 }

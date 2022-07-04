@@ -29,5 +29,5 @@ public class MunicipalityDTO{
     public String atividade;
     public String cdModalidade;
     @JsonProperty("AreaCusteio")
-    public Object areaCusteio;
+    public Double areaCusteio;
 }

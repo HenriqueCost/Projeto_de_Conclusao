@@ -1,22 +1,21 @@
 package com.henriquecosta.criacao_de_api.servicies;
 
-import com.henriquecosta.criacao_de_api.DTO.MunicipalityListDTO;
-import com.henriquecosta.criacao_de_api.Mapper.TransicaoDadosDTOparaServicies;
-import com.henriquecosta.criacao_de_api.repositories.MunicipalityRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class MunicipalityService {
 
+    /*@Autowired
+    private MunicipalityRepository repository;
+
     @Autowired
-    private MunicipalityRepository municipalityRepository;
+    public MunicipalityFeign municipalityFeign;
 
-    public List<MunicipalityListDTO> pegarTodosOsDados(TransicaoDadosDTOparaServicies transicaoDeDadosDTO){
 
-        return municipalityRepository.findAll();
+    /*public Municipality pegarDados(MunicipalityDTO){
+        MunicipalityDTO dados = repository.findById(MunicipalityDTO).get();
+        Municipality municipality = new Municipality(dados);
+        return dados;
     }
 
     /*public Optional<MunicipalityListDTO> acharPorId(Long id){

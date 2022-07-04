@@ -1,4 +1,4 @@
-package com.henriquecosta.criacao_de_api.Mapper.config;
+/*package com.henriquecosta.criacao_de_api.Mapper.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class MapperConfig {
     @Bean
     public ModelMapper modelMapper() {
+
         return new ModelMapper();
     }
-}
+}*/
