@@ -3,9 +3,9 @@ package com.henriquecosta.criacao_de_api.servicies;
 import com.henriquecosta.criacao_de_api.entities.Municipality;
 import com.henriquecosta.criacao_de_api.repositories.MunicipalityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class MunicipalityService{
@@ -21,6 +21,10 @@ public class MunicipalityService{
         return repository.findById(id).get();
     }
 
+    public Page<Municipality> encontrarPorPagina(Pageable pageable){
+        return repository.findAll(pageable);
+    }
+
     public Municipality criarDados(Municipality novoDado){
         return repository.save(novoDado);
     }
@@ -29,8 +33,8 @@ public class MunicipalityService{
         return repository.save(dadosAtualizados);
     }
 
-    public Municipality deletarDados(Long id){
-        return null;
+    public void deletarDados(Long id){
+        repository.deleteById(id);
     }
 
 }

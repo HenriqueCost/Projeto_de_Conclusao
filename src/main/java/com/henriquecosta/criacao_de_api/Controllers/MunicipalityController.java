@@ -8,6 +8,8 @@ import com.henriquecosta.criacao_de_api.entities.Municipality;
 import com.henriquecosta.criacao_de_api.servicies.MunicipalityService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +26,7 @@ public class MunicipalityController {
 
     //Pega os Dados contidos em MunicipalityDTO e os passa para Municipality
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public MunicipalityListDTO pegarTodosDados(){
         MunicipalityListDTO listDto = feign.pegarTodosDados();
 
@@ -35,9 +38,17 @@ public class MunicipalityController {
     }
 
     @GetMapping(value = "{id}")
+    @ResponseStatus(HttpStatus.OK)
     public Municipality pegarDadosPorId(@PathVariable Long id){
         Municipality PegarId = service.pegarDadosPorId(id);
         return PegarId;
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public Page<Municipality> pegarPorPagina(Pageable pageable){
+        Municipality pagina = (Municipality) service.encontrarPorPagina(pageable);
+        return (Page<Municipality>) pagina;
     }
 
     @PostMapping
@@ -48,15 +59,16 @@ public class MunicipalityController {
     }
 
     @PutMapping
+    @ResponseStatus(HttpStatus.OK)
     public Municipality atualizarDados(@RequestBody Municipality municipality){
         Municipality dadoAtualizado = service.atualizarDados(municipality);
         return dadoAtualizado;
     }
 
     @DeleteMapping(value = "{id}")
-    public Municipality deletarDados(@PathVariable Long id){
-        Municipality dadoDeletado = service.deletarDados(id);
-        return dadoDeletado;
+    @ResponseStatus(HttpStatus.OK)
+    public void deletarDados(@PathVariable Long id){
+        service.deletarDados(id);
     }
 
 }
