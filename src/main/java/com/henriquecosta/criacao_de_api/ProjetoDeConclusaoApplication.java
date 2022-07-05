@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableFeignClients
 @EnableJpaRepositories
 @SpringBootApplication
-@EntityScan(basePackages = {"com.henriquecosta.criacao_de_api.entity"})
+@EntityScan(basePackages = {"com.henriquecosta.criacao_de_api.entities"})
 public class ProjetoDeConclusaoApplication {
 
     public static void main(String[] args) {

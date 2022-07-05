@@ -7,8 +7,6 @@ import com.henriquecosta.criacao_de_api.repositories.MunicipalityRepository;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
-
 @Data
 public class Conversor {
 
