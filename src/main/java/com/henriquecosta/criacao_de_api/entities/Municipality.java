@@ -33,9 +33,9 @@ public class Municipality implements Serializable {
     public String cdFonteRecurso;
     public String cdTipoSeguro;
     @JsonProperty("QtdCusteio")
-    public int qtdCusteio;
+    public Double qtdCusteio;
     @JsonProperty("VlCusteio")
-    public int vlCusteio;
+    public Double vlCusteio;
     @JsonProperty("Atividade")
     public String atividade;
     public String cdModalidade;
