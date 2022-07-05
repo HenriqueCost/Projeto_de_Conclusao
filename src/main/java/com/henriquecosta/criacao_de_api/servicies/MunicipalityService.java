@@ -24,6 +24,9 @@ public class MunicipalityService{
     public Page<Municipality> encontrarPorPagina(Pageable pageable){
         return repository.findAll(pageable);
     }
+    public Page<Municipality> encontrarPorAno(String anoEmissao, Pageable pageable){
+        return repository.procurarPorAno(anoEmissao, pageable);
+    }
 
     public Municipality criarDados(Municipality novoDado){
         return repository.save(novoDado);

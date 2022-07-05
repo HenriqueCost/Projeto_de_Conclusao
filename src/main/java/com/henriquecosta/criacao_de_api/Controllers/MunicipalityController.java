@@ -44,11 +44,18 @@ public class MunicipalityController {
         return PegarId;
     }
 
-    @GetMapping
+    @GetMapping(value ="/pagina")
     @ResponseStatus(HttpStatus.OK)
     public Page<Municipality> pegarPorPagina(Pageable pageable){
         Municipality pagina = (Municipality) service.encontrarPorPagina(pageable);
         return (Page<Municipality>) pagina;
+    }
+
+    @GetMapping(value = "/ano")
+    @ResponseStatus(HttpStatus.OK)
+    public Page<Municipality> encontrarPorAno(@RequestParam String anoEmissao, Pageable pageable){
+        Municipality ano = (Municipality) service.encontrarPorAno(anoEmissao, pageable);
+        return (Page<Municipality>) ano;
     }
 
     @PostMapping
