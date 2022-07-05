@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -46,9 +47,9 @@ public class MunicipalityController {
 
     @GetMapping(value ="/pagina")
     @ResponseStatus(HttpStatus.OK)
-    public Page<Municipality> pegarPorPagina(Pageable pageable){
-        Municipality pagina = (Municipality) service.encontrarPorPagina(pageable);
-        return (Page<Municipality>) pagina;
+    public ResponseEntity<Page<Municipality>> pegarPorPagina(Pageable pageable){
+        Page<Municipality> pagina =  service.encontrarPorPagina(pageable);
+        return ResponseEntity.ok(pagina);
     }
 
     @GetMapping(value = "/ano")
