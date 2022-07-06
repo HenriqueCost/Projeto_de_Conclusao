@@ -1,6 +1,7 @@
 package com.henriquecosta.criacao_de_api.repositories;
 
 import com.henriquecosta.criacao_de_api.entities.Municipality;
+import com.henriquecosta.criacao_de_api.utils.MunicipalityTools;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,7 +20,7 @@ class MunicipalityRepositoryTest {
     @DisplayName("Novos dados sao adicionados quando ha sucesso")
     void salvar_dado_Municipality_quando_sucesso(){
         //Criando um novoDdado
-        Municipality dadoASerSalvo = novoDadoTest();
+        Municipality dadoASerSalvo = MunicipalityTools.criarNovoDadoParaSalvar();
         Municipality dadoSalvo = this.repository.save(dadoASerSalvo);
         //Verificando se o dado enviado ao banco de dados não é nulo
         Assertions.assertThat(dadoSalvo).isNotNull();
@@ -33,7 +34,7 @@ class MunicipalityRepositoryTest {
     @DisplayName("Atualizar dado quando ha sucesso")
     void salvar_dado_atualizado_quando_sucesso(){
         //Criando mesmo dado do teste de adicionar dados
-        Municipality dadoASerSalvo = novoDadoTest();
+        Municipality dadoASerSalvo = MunicipalityTools.criarNovoDadoParaSalvar();
         Municipality dadoSalvo = this.repository.save(dadoASerSalvo);
         //Adicionando novo dado
         dadoSalvo.setNomeProduto("SAIS MINERAIS");
@@ -51,7 +52,7 @@ class MunicipalityRepositoryTest {
     @DisplayName("Deletar dado quando ha sucesso")
     void deletar_dado_atualizado_quando_sucesso(){
         //Criando mesmo dado do teste de adicionar dados
-        Municipality dadoASerSalvo = novoDadoTest();
+        Municipality dadoASerSalvo = MunicipalityTools.criarNovoDadoParaSalvar();
         Municipality dadoSalvo = this.repository.save(dadoASerSalvo);
         //Deletando o dadoSalvo do banco de dados
         this.repository.delete(dadoSalvo);
@@ -65,7 +66,7 @@ class MunicipalityRepositoryTest {
     @DisplayName("Pegar dado por id e retornar lista de dados quando ha sucesso")
     void Pegar_dado_por_id_quando_sucesso(){
         //Criando mesmo dado do teste de adicionar dados
-        Municipality dadoASerSalvo = novoDadoTest();
+        Municipality dadoASerSalvo = MunicipalityTools.criarNovoDadoParaSalvar();
         Municipality dadoSalvo = this.repository.save(dadoASerSalvo);
         //Pegando um dado por Id
         Long id = dadoSalvo.getId();
@@ -87,8 +88,4 @@ class MunicipalityRepositoryTest {
         Assertions.assertThat(dadoPorId).isEmpty();
     }
 
-    //Retornando novo dado "SOJA" para o Municipality
-    private Municipality novoDadoTest(){
-        return Municipality.builder().nomeProduto("SOJA").build();
-    }
 }
