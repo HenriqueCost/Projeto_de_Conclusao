@@ -25,7 +25,7 @@ public class MunicipalityController {
 
     private MunicipalityFeign feign;
 
-    //Pega os Dados contidos em MunicipalityDTO e os passa para Municipality
+    //Pega os Dados contidos em MunicipalityDTO e passa os para Municipality
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public MunicipalityListDTO pegarTodosDados(){
@@ -74,9 +74,18 @@ public class MunicipalityController {
     }
 
     @DeleteMapping(value = "{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public void deletarDados(@PathVariable Long id){
+    public ResponseEntity<Void> deletarDados(@PathVariable Long id){
         service.deletarDados(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    //Método para o teste de PostMapping
+    public Municipality criarDados() {
+        return criarDados(Municipality.builder().build());
+    }
+
+    //Método para o teste de PutMapping
+    public Municipality atualizarDados() {
+        return atualizarDados(Municipality.builder().build());
+    }
 }
