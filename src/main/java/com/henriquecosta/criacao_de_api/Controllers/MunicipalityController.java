@@ -48,8 +48,7 @@ public class MunicipalityController {
     @GetMapping(value ="/pagina")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Page<Municipality>> pegarPorPagina(Pageable pageable){
-        Page<Municipality> pagina =  service.encontrarPorPagina(pageable);
-        return ResponseEntity.ok(pagina);
+        return ResponseEntity.ok(service.encontrarPorPagina(pageable));
     }
 
     @GetMapping(value = "/ano")
