@@ -53,8 +53,8 @@ class MunicipalityControllerTest {
     }
 
     @Test
-    @DisplayName("Pagina retorna lista de dados quando sucesso")
-    void encontrarPorPagina_deve_retornar_listaDeDados_quando_ha_sucesso(){
+    @DisplayName("Pagina em Controller retorna lista de dados quando sucesso")
+    void encontrarPorPagina_Controller_deve_retornar_listaDeDados_quando_ha_sucesso(){
         //Caso o "pegarPorPagina" não tenha sucesso o mesmo exige um nome valido
         String nomeProdutoEsperado = MunicipalityTools.CriarNovoDadoQueSejaValido().getNomeProduto();
         //Exige que o dadosLista seja retornado
@@ -66,8 +66,8 @@ class MunicipalityControllerTest {
     }
 
     @Test
-    @DisplayName("Id retorna dados quando sucesso")
-    void pegarPorId_deve_retornar_dados_quando_ha_sucesso(){
+    @DisplayName("Id em Controller retorna dados quando sucesso")
+    void pegarPorId_Controller_deve_retornar_dados_quando_ha_sucesso(){
         //Caso o "pegarDadosPorId" não tenha sucesso o mesmo exige um nome valido
         Long idEsperado = MunicipalityTools.CriarNovoDadoQueSejaValido().getId();
         //Exige que o municipality seja retornado
@@ -78,8 +78,8 @@ class MunicipalityControllerTest {
     }
 
     @Test
-    @DisplayName("criarDados retorna dados quando sucesso")
-    void criarDados_deve_retornar_dados_quando_ha_sucesso(){
+    @DisplayName("criarDados em Controller retorna dados quando sucesso")
+    void criarDados_Controller_deve_retornar_dados_quando_ha_sucesso(){
         //Exige que o dadosCriados seja retornado
        Municipality dadosCriados = controller.criarDados();
         //As Assertions fazem essa exigência
@@ -87,8 +87,8 @@ class MunicipalityControllerTest {
     }
 
     @Test
-    @DisplayName("atualizarDados atualiza dados quando sucesso")
-    void atualizar_deve_atualiza_dados_quando_ha_sucesso(){
+    @DisplayName("atualizarDados em Controller atualiza dados quando sucesso")
+    void atualizar_Controller_deve_atualiza_dados_quando_ha_sucesso(){
         //Exige que o dadosAtualizados seja retornado
         Municipality dadosAtualizados = controller.atualizarDados();
         //As Assertions fazem essa exigência
@@ -96,8 +96,8 @@ class MunicipalityControllerTest {
     }
 
     @Test
-    @DisplayName("deletarDados remove dados quando sucesso")
-    void deletar_deve_deletar_dados_quando_ha_sucesso(){
+    @DisplayName("deletarDados em Controller remove dados quando sucesso")
+    void deletar_Controller_deve_deletar_dados_quando_ha_sucesso(){
 
         Assertions.assertThatCode(() -> controller.deletarDados(1L))
                 .doesNotThrowAnyException();

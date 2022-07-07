@@ -39,5 +39,4 @@ public class MunicipalityService{
     public void deletarDados(Long id){
         repository.deleteById(id);
     }
-
 }

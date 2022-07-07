@@ -79,12 +79,12 @@ public class MunicipalityController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    //Método para o teste de PostMapping
+    //Método para o teste de PostMapping na classe ControllerTest
     public Municipality criarDados() {
         return criarDados(Municipality.builder().build());
     }
 
-    //Método para o teste de PutMapping
+    //Método para o teste de PutMapping na classe ControllerTest
     public Municipality atualizarDados() {
         return atualizarDados(Municipality.builder().build());
     }
