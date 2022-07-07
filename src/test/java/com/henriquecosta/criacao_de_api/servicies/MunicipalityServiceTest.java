@@ -90,6 +90,7 @@ class MunicipalityServiceTest {
     void atualizar_Service_deve_atualiza_dados_quando_ha_sucesso(){
         //Exige que o dadosAtualizados seja retornado
         Municipality dadosAtualizados = service.atualizarDados(MunicipalityTools.CriarNovoDadoQueSejaValido());
+
         //As Assertions fazem essa exigência
         Assertions.assertThat(dadosAtualizados).isNotNull().isEqualTo(MunicipalityTools.CriarNovoDadoQueSejaValido());
     }

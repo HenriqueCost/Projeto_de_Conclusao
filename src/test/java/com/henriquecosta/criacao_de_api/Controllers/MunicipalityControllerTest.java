@@ -32,6 +32,7 @@ class MunicipalityControllerTest {
     void preparacaoParaTestes(){
         //Retornar uma lista valida de dados que fica armazenada na variável "dadosLista"
         PageImpl<Municipality> dadosLista = new PageImpl<>(List.of(MunicipalityTools.CriarNovoDadoQueSejaValido()));
+
         //Não importa o argumento utilizado, ao chamar a classe service, a mesma retorna "dadosLista"
         BDDMockito.when(serviceMock.encontrarPorPagina(ArgumentMatchers.any()))
                 .thenReturn(dadosLista);
@@ -57,8 +58,10 @@ class MunicipalityControllerTest {
     void encontrarPorPagina_Controller_deve_retornar_listaDeDados_quando_ha_sucesso(){
         //Caso o "pegarPorPagina" não tenha sucesso o mesmo exige um nome valido
         String nomeProdutoEsperado = MunicipalityTools.CriarNovoDadoQueSejaValido().getNomeProduto();
+
         //Exige que o dadosLista seja retornado
         Page<Municipality> dadosLista = controller.pegarPorPagina(null).getBody();
+
         //As Assertions fazem essa exigência
         Assertions.assertThat(dadosLista).isNotNull();
         Assertions.assertThat(dadosLista.toList()).isNotEmpty().hasSize(1);
@@ -70,8 +73,10 @@ class MunicipalityControllerTest {
     void pegarPorId_Controller_deve_retornar_dados_quando_ha_sucesso(){
         //Caso o "pegarDadosPorId" não tenha sucesso o mesmo exige um nome valido
         Long idEsperado = MunicipalityTools.CriarNovoDadoQueSejaValido().getId();
+
         //Exige que o municipality seja retornado
          Municipality municipality = controller.pegarDadosPorId(idEsperado);
+
         //As Assertions fazem essa exigência
         Assertions.assertThat(municipality).isNotNull();
         Assertions.assertThat(municipality.getId()).isNotNull().isEqualTo(idEsperado);
@@ -82,6 +87,7 @@ class MunicipalityControllerTest {
     void criarDados_Controller_deve_retornar_dados_quando_ha_sucesso(){
         //Exige que o dadosCriados seja retornado
        Municipality dadosCriados = controller.criarDados();
+
         //As Assertions fazem essa exigência
         Assertions.assertThat(dadosCriados).isNotNull().isEqualTo(MunicipalityTools.CriarNovoDadoQueSejaValido());
     }
@@ -91,6 +97,7 @@ class MunicipalityControllerTest {
     void atualizar_Controller_deve_atualiza_dados_quando_ha_sucesso(){
         //Exige que o dadosAtualizados seja retornado
         Municipality dadosAtualizados = controller.atualizarDados();
+
         //As Assertions fazem essa exigência
         Assertions.assertThat(dadosAtualizados).isNotNull().isEqualTo(MunicipalityTools.CriarNovoDadoAtualizado());
     }
@@ -101,8 +108,10 @@ class MunicipalityControllerTest {
 
         Assertions.assertThatCode(() -> controller.deletarDados(1L))
                 .doesNotThrowAnyException();
+
         //Exige que o deletarDados seja retornado
         ResponseEntity<Void> dadosDeletados = controller.deletarDados(1L);
+
         //As Assertions fazem essa exigência
         Assertions.assertThat(dadosDeletados).isNotNull();
         Assertions.assertThat(dadosDeletados.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);

@@ -12,6 +12,7 @@ import java.util.List;
 
 @Getter
 @Setter
+//Propósito da classe é retornar uma resposta adequada no MunicipalityControllerIntegration
 public class PageableResponse<T> extends PageImpl<T> {
     private boolean first;
     private boolean last;

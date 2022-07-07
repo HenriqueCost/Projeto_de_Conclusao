@@ -60,13 +60,12 @@ public class MunicipalityController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Municipality criarDados(@RequestBody Municipality municipality){
-        Municipality dadoNovo = service.criarDados(municipality);
-        return dadoNovo;
+    public ResponseEntity<Municipality> criarDados(@RequestBody Municipality municipality){
+        return new ResponseEntity<>(service.criarDados(municipality), HttpStatus.CREATED);
     }
 
     @PutMapping
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public Municipality atualizarDados(@RequestBody Municipality municipality){
         Municipality dadoAtualizado = service.atualizarDados(municipality);
         return dadoAtualizado;
@@ -80,7 +79,7 @@ public class MunicipalityController {
 
     //Método para o teste de PostMapping na classe ControllerTest
     public Municipality criarDados() {
-        return criarDados(Municipality.builder().build());
+        return service.criarDados(Municipality.builder().build());
     }
 
     //Método para o teste de PutMapping na classe ControllerTest
