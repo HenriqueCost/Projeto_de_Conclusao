@@ -10,7 +10,7 @@
   * [Modo de Funcionamento](#Modo-de-funcionamento)
   * [Preview do Código](#Preview-do-codigo)
   * [Configurações do Projeto](#Configurações-do-projeto)
-  * [Documentação](#Documentacao)
+  * [Documentação](#Documentaçao)
   * [Autor](#Autor)
 <!--te-->
 
