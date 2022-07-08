@@ -1,18 +1,25 @@
 package com.henriquecosta.criacao_de_api.Controllers;
 
-import com.henriquecosta.criacao_de_api.ClientFeign.MunicipalityFeign;
+import com.henriquecosta.criacao_de_api.DTO.MunicipalitySomaDTO;
+import com.henriquecosta.criacao_de_api.Feign.MunicipalityFeign;
 import com.henriquecosta.criacao_de_api.DTO.MunicipalityDTO;
 import com.henriquecosta.criacao_de_api.DTO.MunicipalityListDTO;
+import com.henriquecosta.criacao_de_api.MapperConfig.ModelMapperConfig;
 import com.henriquecosta.criacao_de_api.entities.Conversor;
 import com.henriquecosta.criacao_de_api.entities.Municipality;
+import com.henriquecosta.criacao_de_api.repositories.MunicipalityRepository;
 import com.henriquecosta.criacao_de_api.servicies.MunicipalityService;
 import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @AllArgsConstructor
@@ -22,6 +29,12 @@ public class MunicipalityController {
 
     @Autowired
     private MunicipalityService service;
+
+    @Autowired
+    private ModelMapper mapper;
+
+    @Autowired
+    private MunicipalityRepository repository;
 
     private MunicipalityFeign feign;
 
@@ -51,12 +64,17 @@ public class MunicipalityController {
         return ResponseEntity.ok(service.encontrarPorPagina(pageable));
     }
 
-    @GetMapping(value = "/ano")
-    @ResponseStatus(HttpStatus.OK)
-    public Page<Municipality> encontrarPorAno(@RequestParam String anoEmissao, Pageable pageable){
-        Municipality ano = (Municipality) service.encontrarPorAno(anoEmissao, pageable);
-        return (Page<Municipality>) ano;
+    /*public MunicipalitySomaDTO somaDTO(Municipality municipality){
+        return mapper.map(municipality, MunicipalitySomaDTO.class);
     }
+
+    @GetMapping("/ano")
+    public List<MunicipalitySomaDTO> procurarAno() {
+        return repository.findAll()
+                .stream()
+                .map(this::somaDTO)
+                .collect(Collectors.toList());
+    }*/
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

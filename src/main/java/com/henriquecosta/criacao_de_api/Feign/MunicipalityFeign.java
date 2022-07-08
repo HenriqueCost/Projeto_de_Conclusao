@@ -1,4 +1,4 @@
-package com.henriquecosta.criacao_de_api.ClientFeign;
+package com.henriquecosta.criacao_de_api.Feign;
 
 import com.henriquecosta.criacao_de_api.DTO.MunicipalityListDTO;
 import org.springframework.cloud.openfeign.FeignClient;
