@@ -5,6 +5,7 @@ import com.henriquecosta.criacao_de_api.entities.Municipality;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 
@@ -23,7 +24,7 @@ public class MunicipalitySomaDTO implements Serializable {
     public String anoEmissao;
     public Double vlCusteio;
 
-    public MunicipalitySomaDTO(Municipality municipality){
+    public MunicipalitySomaDTO(@NotNull Municipality municipality){
         id = municipality.getId();
         nomeProduto = municipality.getNomeProduto();
         nomeUF = municipality.getNomeUF();
@@ -31,5 +32,4 @@ public class MunicipalitySomaDTO implements Serializable {
         anoEmissao = municipality.getAnoEmissao();
         vlCusteio = municipality.getVlCusteio();
     }
-
 }
