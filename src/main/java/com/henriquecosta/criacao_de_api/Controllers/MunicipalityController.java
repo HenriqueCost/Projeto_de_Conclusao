@@ -1,10 +1,9 @@
 package com.henriquecosta.criacao_de_api.Controllers;
 
-import com.henriquecosta.criacao_de_api.DTO.MunicipalitySomaDTO;
-import com.henriquecosta.criacao_de_api.Feign.MunicipalityFeign;
 import com.henriquecosta.criacao_de_api.DTO.MunicipalityDTO;
 import com.henriquecosta.criacao_de_api.DTO.MunicipalityListDTO;
-import com.henriquecosta.criacao_de_api.MapperConfig.ModelMapperConfig;
+import com.henriquecosta.criacao_de_api.DTO.MunicipalitySomaDTO;
+import com.henriquecosta.criacao_de_api.Feign.MunicipalityFeign;
 import com.henriquecosta.criacao_de_api.entities.Conversor;
 import com.henriquecosta.criacao_de_api.entities.Municipality;
 import com.henriquecosta.criacao_de_api.repositories.MunicipalityRepository;
@@ -64,17 +63,17 @@ public class MunicipalityController {
         return ResponseEntity.ok(service.encontrarPorPagina(pageable));
     }
 
-    /*public MunicipalitySomaDTO somaDTO(Municipality municipality){
+    public MunicipalitySomaDTO somaDTO(Municipality municipality){
         return mapper.map(municipality, MunicipalitySomaDTO.class);
     }
 
     @GetMapping("/ano")
-    public List<MunicipalitySomaDTO> procurarAno() {
-        return repository.findAll()
+    public List<MunicipalitySomaDTO> procurarAno(@RequestParam String anoEmissao) {
+        return repository.procurarPorAno(anoEmissao)
                 .stream()
                 .map(this::somaDTO)
                 .collect(Collectors.toList());
-    }*/
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
