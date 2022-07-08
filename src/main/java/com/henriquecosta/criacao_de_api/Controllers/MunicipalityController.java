@@ -68,8 +68,8 @@ public class MunicipalityController {
     }
 
     @GetMapping("/ano")
-    public List<MunicipalitySomaDTO> procurarAno(@RequestParam String anoEmissao) {
-        return repository.procurarPorAno(anoEmissao)
+    public List<MunicipalitySomaDTO> procurarAno() {
+        return repository.procurarPorAno(atualizarDados().anoEmissao)
                 .stream()
                 .map(this::somaDTO)
                 .collect(Collectors.toList());
