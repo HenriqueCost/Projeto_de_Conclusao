@@ -117,7 +117,7 @@ public class Municipality implements Serializable {
 
 ## Configurações do Projeto
 
-Pré requisito: Java 11
+Pré requisito: Java 17
 
 ```java
 # Link do GitHub: 
