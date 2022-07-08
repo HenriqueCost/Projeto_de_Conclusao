@@ -16,6 +16,8 @@ seguinte link:
 
 O banco de dados utilizado para o onboarding dos dados foi o H2: 
 
+![Banco H2](BancoH2.png "Banco de Dados H2")
+
 ## Técnologias utilizadas
 
 - Java JDK 11 ++
