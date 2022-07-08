@@ -33,7 +33,7 @@ class MunicipalityControllerIntegrationTest {
 
         Municipality dadoSalvo = repository.save(MunicipalityTools.CriarNovoDadoAtualizado());
 
-        //Caso o "pegarPorPagina" não tenha sucesso o mesmo exige um nome valido
+        //Caso o "dadoSalvo" não tenha sucesso o mesmo exige um nome valido
         String nomeProdutoEsperado = dadoSalvo.getNomeProduto();
 
         PageableResponse<Municipality> dadosLista = template.exchange("/dados/pagina", HttpMethod.GET, null,
@@ -52,7 +52,7 @@ class MunicipalityControllerIntegrationTest {
 
         Municipality dadoSalvo = repository.save(MunicipalityTools.criarNovoDadoParaSalvar());
 
-        //Caso o "pegarDadosPorId" não tenha sucesso o mesmo exige um nome valido
+        //Caso o "dadoSalvo" não tenha sucesso o mesmo exige um nome valido
         Long idEsperado = dadoSalvo.getId();
 
         //Exige que o municipality seja retornado
@@ -83,7 +83,7 @@ class MunicipalityControllerIntegrationTest {
     void atualizar_Integration_deve_atualiza_dados_quando_ha_sucesso(){
         Municipality dadosAtualizadosEsperados = repository.save(MunicipalityTools.CriarNovoDadoAtualizado());
 
-        //Exige que o dadosCriados seja retornado
+        //Não retorna nada
         ResponseEntity<Municipality> municipality = template.exchange("/dados",
                 HttpMethod.PUT, new HttpEntity<>(dadosAtualizadosEsperados), Municipality.class);
 
@@ -97,7 +97,7 @@ class MunicipalityControllerIntegrationTest {
     void deletar_Controller_deve_deletar_dados_quando_ha_sucesso(){
         Municipality dadosDeletadosEsperados = repository.save(MunicipalityTools.CriarNovoDadoAtualizado());
 
-        //Exige que o dadosCriados seja retornado
+        //Não retorna nada
         ResponseEntity<Municipality> municipality = template.exchange("/dados/{id}",
                 HttpMethod.DELETE, null, Municipality.class, dadosDeletadosEsperados.getId());
 
