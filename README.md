@@ -10,7 +10,7 @@
   * [Modo de Funcionamento](#Modo-de-funcionamento)
   * [Preview do Código](#Preview-do-codigo)
   * [Configurações do Projeto](#Configurações-do-projeto)
-  * [Documentação](#Documentaçao)
+  * [Documentação](#Swagger-Documentation)
   * [Autor](#Autor)
 <!--te-->
 
@@ -117,7 +117,7 @@ public class Municipality implements Serializable {
 }
 ```
 
-## Documentação
+## Swagger Documentation
 
 A documentação foi feita utilizando da ferramenta Swagger e cobre as funcionalidades da API, como funcionam os métodos, os parâmetos utilizandos por eles e o que 
 eles retornam em suas reuisições (GET, POST, PUT e DELETE):
