@@ -16,7 +16,7 @@ seguinte link:
 
 O banco de dados utilizado para o onboarding dos dados foi o H2: 
 
-![Banco H2](BancoH2.2.png "Banco de Dados H2")
+![Banco H2](https://user-images.githubusercontent.com/105726010/177912388-1292080b-1bb8-4c84-a8f0-80f20c3e43ed.png "Banco de Dados H2")
 
 ## Técnologias utilizadas
 
