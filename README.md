@@ -15,7 +15,7 @@
 
 ## Informações do Projeto
 
-  O Projeto de conclusâo se trata de um projeto back-end, sobre a criação de uma API, que realiza um processo de onboarding de dados, consumindo
+  O Projeto de conclusão se trata de um projeto back-end, sobre a criação de uma API, que realiza um processo de onboarding de dados, consumindo
 uma API externa e obtendo seus dados, que ficam guardados em um banco de dados.
 
   Essa API externa possui uma lista de dados armazenados sobre sobre contratos de comercialização por Produto, Região e UF e foram retirados da
