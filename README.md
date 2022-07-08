@@ -4,7 +4,7 @@ Projeto de uma API sobre uma Matriz de Dados do Crédito Rural.
 
 ## Informações do Projeto
 
-**Port de acesso do Projeto:** localhost8080/h2-console
+Link do GitHub: "https://github.com/HenriqueCost/Projeto_de_Conclusao"
 
 O Projeto de conclusâo se trata de um projeto back-end, sobre a criação de uma API, que realiza um processo de onboarding de dados, consumindo
 uma API externa e obtendo seus dados, que ficam guardados em um banco de dados.
@@ -17,6 +17,10 @@ seguinte link:
 O banco de dados utilizado para o onboarding dos dados foi o H2: 
 
 ![Banco H2](https://user-images.githubusercontent.com/105726010/177912388-1292080b-1bb8-4c84-a8f0-80f20c3e43ed.png "Banco de Dados H2")
+
+Esse banco pode ser acessado na seguinte porta: "localhost8080/h2-console"
+
+Obs.: vale destacar que a porta "localhost8080" só vai funcionar se a aplicação estiver rodando.
 
 ## Técnologias utilizadas
 
