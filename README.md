@@ -38,6 +38,7 @@ seguinte link:
 - Banco de Dados H2
 - Git
 - Lombok
+- Swagger
 - Jpa
 - Postman - 9.19.0.0
 - Intellij IDE - 2022.1.3 Windows
@@ -126,7 +127,10 @@ Pré requisito: Java 17
 # Porta de acesso: 
 "http://localhost:8080"
 
-# Sistema de funcinamento
+## Documentação em Swagger
+"http://localhost:8080/swagger-ui/index.html"
+
+# Sistema de funcionamento
 "Windows"
 ```
 
