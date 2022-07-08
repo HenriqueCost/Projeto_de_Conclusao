@@ -5,12 +5,12 @@
 ## Tabela de Conteúdos
 
 <!--ts-->
-  * [Informações do Projeto](##Informações-do-projeto)
-  * [Técnologias Utilizadas](##Técnologias-utilizadas)
-  * [Modo de Funcionamento](##Modo-de-funcionamento)
-  * [Preview do Código](##Preview-do-codigo)
-  * [Configurações do Projeto](##Configurações-do-projeto)
-  * [Autor](##Autor)
+  * [Informações do Projeto](#Informações-do-projeto)
+  * [Técnologias Utilizadas](#Técnologias-utilizadas)
+  * [Modo de Funcionamento](#Modo-de-funcionamento)
+  * [Preview do Código](#Preview-do-codigo)
+  * [Configurações do Projeto](#Configurações-do-projeto)
+  * [Autor](#Autor)
 <!--te-->
 
 ## Informações do Projeto
